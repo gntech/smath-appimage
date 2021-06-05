@@ -3,7 +3,6 @@ ingredients:
   dist: bionic
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ bionic main universe
-    - deb https://download.mono-project.com/repo/ubuntu stable-bionic main
   packages:
     - mono-runtime
     - libmono-corlib4.0-cil
