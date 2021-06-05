@@ -72,16 +72,18 @@ cp /usr/lib/mono/4.5/mscorlib.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Accessibility.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Mono.Posix.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Mono.Security.dll AppDir/usr/lib/mono/4.5
+cp /usr/lib/mono/4.5/System.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Configuration.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Core.dll AppDir/usr/lib/mono/4.5
-cp /usr/lib/mono/4.5/System.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Data.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Design.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Drawing.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Numerics.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Security.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Windows.Forms.dll AppDir/usr/lib/mono/4.5
+cp /usr/lib/mono/4.5/System.Windows.Forms.DataVisualization.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Xml.dll AppDir/usr/lib/mono/4.5
+cp /usr/lib/mono/4.5/Microsoft.CSharp.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Microsoft.VisualBasic.dll AppDir/usr/lib/mono/4.5
 
 cp /usr/bin/mono AppDir/usr/bin
