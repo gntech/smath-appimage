@@ -62,10 +62,10 @@ cp restore-environment.sh AppDir/usr/bin/
 chmod +x AppDir/usr/bin/restore-environment.sh
 
 cp /usr/lib/libgdiplus.so.0 AppDir/usr/lib
-
-cp /usr/lib/libmono-btls-shared.so AppDir/usr/lib
-cp /usr/lib/libmono-native.so AppDir/usr/lib
+#cp /usr/lib/libmono-btls-shared.so AppDir/usr/lib
+#cp /usr/lib/libmono-native.so AppDir/usr/lib
 cp /usr/lib/libMonoPosixHelper.so AppDir/usr/lib
+#cp /usr/lib/libMonoSupportW.so AppDir/usr/lib
 
 cp /usr/lib/mono/4.5/Accessibility.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/cert-sync.exe AppDir/usr/lib/mono/4.5
