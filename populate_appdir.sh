@@ -91,7 +91,9 @@ cp /etc/mono/4.5/machine.config AppDir/etc/mono/4.5
 ## Build AppImage
 wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
 chmod +x appimagetool-x86_64.AppImage
-ARCH=x86_64 ./appimagetool-x86_64.AppImage AppDir out/SMathStudioDesktop.AppImage
+ARCH=x86_64
+GLIBC=$(ldd --version | head -1 | awk '{print $5}')
+ARCH=${ARCH} ./appimagetool-x86_64.AppImage AppDir out/SMathStudioDesktop.${VERSION}.${ARCH}.glibc${GLIBC}.AppImage
 
 rm -f *.zip
 rm -f *.tar.gz
