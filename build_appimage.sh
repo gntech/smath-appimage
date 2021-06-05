@@ -35,7 +35,7 @@ mkdir -p AppDir/usr/share/icons/hicolor/256x256
 mkdir -p AppDir/usr/share/icons/hicolor/512x512
 mkdir -p AppDir/usr/share/icons/hicolor/1024x1024
 mkdir -p AppDir/usr/share/icons/hicolor/scalable
-mkdir -p AppDir/usr/lib/mono/4.5/Facades
+mkdir -p AppDir/usr/lib/mono/4.5
 mkdir -p AppDir/usr/lib/smath
 
 wget --referer https://smath.com https://smath.com/file/oVRx7/SMathStudioDesktop.0_99_7822.Mono.tar.gz
@@ -55,12 +55,11 @@ cp Icons/SSLogo256.png AppDir/smath.png
 
 cp AppRun AppDir/
 cp smath.desktop AppDir/
-cp smath.desktop AppDir/usr/share/applications
+cp smath.desktop AppDir/usr/share/applications/
 cp smath_launcher AppDir/usr/bin/
 chmod +x AppDir/usr/bin/smath_launcher
 cp restore-environment.sh AppDir/usr/bin/
 chmod +x AppDir/usr/bin/restore-environment.sh
-
 
 cp /usr/lib/libgdiplus.so.0 AppDir/usr/lib
 
