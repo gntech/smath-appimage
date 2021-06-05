@@ -13,6 +13,10 @@ ingredients:
     - echo $VERSION > VERSION
     - wget --referer https://smath.com https://smath.com/file/YsSTE/SMathStudio.Icons.zip
 script:
+  - mkdir usr/lib/mono/4.5/Facades
+  - mkdir usr/lib/mono/2.0-api
+  - ln -s usr/lib/mono/exe/* usr/lib/mono/4.5/Facades/
+  - ln -s usr/lib/mono/exe/* usr/lib/mono/2.0-api/
   - unzip ../SMathStudio.Icons.zip
   - mkdir -p lib/smath
   - ( cd lib/smath ; tar -zxvf ../../../SMathStudio*.tar.gz)
