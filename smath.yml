@@ -14,7 +14,7 @@ ingredients:
     - echo $VERSION > VERSION
     - wget --referer https://smath.com https://smath.com/file/YsSTE/SMathStudio.Icons.zip
 script:
-  - unzip SMathStudio.Icons.zip
+  - unzip ../SMathStudio.Icons.zip
   - mkdir -p lib/smath
   - ( cd lib/smath ; tar -zxvf ../../../SMathStudio*.tar.gz)
   - cp ../../SSLogo256.png smath.png
@@ -35,6 +35,6 @@ script:
   - Name=SMathStudio
   - GenericName=Math Software
   - Exec=smath %F
-  - Icon=smath
+  - Icon=SSLogo256.png
   - Categories=Office;
   - EOF
