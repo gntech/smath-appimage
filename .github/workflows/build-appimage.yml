@@ -5,15 +5,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: Install mono
+        run: sudo apt-get install libmono-system-windows-forms4.0-cil
       - name: build-appimage
         run: |
-          wget https://github.com/AppImage/pkg2appimage/releases/download/continuous/pkg2appimage-1807-x86_64.AppImage
-          chmod +x pkg2appimage-1807-x86_64.AppImage
-          ./pkg2appimage-1807-x86_64.AppImage smath.yml
+          ./populate_appdir.sh
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
           name: dist
           path: |
             out/*AppImage
-            
+
