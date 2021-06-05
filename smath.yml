@@ -1,8 +1,8 @@
 app: SMathStudio
 ingredients:
-  dist: bionic
+  dist: focal
   sources:
-    - deb http://archive.ubuntu.com/ubuntu/ bionic main universe
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
   packages:
     - mono-runtime
     - mono-reference-assemblies-2.0
