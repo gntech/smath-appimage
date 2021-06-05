@@ -4,8 +4,8 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: build-appimage
-        uses: actions/checkout@v2
         run: |
           wget https://github.com/AppImage/pkg2appimage/releases/download/continuous/pkg2appimage-1807-x86_64.AppImage
           chmod +x pkg2appimage-1807-x86_64.AppImage
