@@ -4,7 +4,6 @@ ingredients:
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ focal main universe
   packages:
-    - mono-runtime
     - mono-4.0-gac
     - libmono-system-windows-forms4.0-cil
   script:
