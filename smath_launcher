@@ -1,0 +1,8 @@
+#!/bin/sh
+LAUNCHER=$(readlink -f "${0}")
+HERE="$(dirname "${LAUNCHER}")"
+cd "${HERE}/../lib/smath"
+export LD_LIBRARY_PATH=${HERE}/usr/lib/:$LD_LIBRARY_PATH
+export MONO_PATH=${HERE}/usr/lib/mono/4.5:${HERE}/usr/lib/mono/4.5/Facades:${HERE}/usr/lib/mono/2.0-api
+mono --debug SMathStudio_Desktop.exe "$@"
+

@@ -17,23 +17,7 @@ script:
   - mkdir -p lib/smath
   - ( cd lib/smath ; tar -zxvf ../../../SMathStudio*.tar.gz)
   - cp SSLogo256.png smath.png
-  - cat > usr/bin/smath <<EOF
-  - #!/bin/sh
-  - LAUNCHER=$(readlink -f "${0}")
-  - HERE="$(dirname "${LAUNCHER}")"
-  - cd "\${HERE}/../lib/smath"
-  - export LD_LIBRARY_PATH=\${HERE}/usr/lib/:$LD_LIBRARY_PATH
-  - export MONO_PATH=\${HERE}}/usr/lib/mono/4.5:\${HERE}/usr/lib/mono/4.5/Facades:\${HERE}/usr/lib/mono/2.0-api
-  - mono --debug SMathStudio_Desktop.exe "\$@"
-  - EOF
-  - chmod +x usr/bin/smath
-  - cat > smath.desktop <<EOF
-  - [Desktop Entry]
-  - Version=1.0
-  - Type=Application
-  - Name=SMathStudio
-  - GenericName=Math Software
-  - Exec=smath %F
-  - Icon=SSLogo256.png
-  - Categories=Office;
-  - EOF
+  - cp ../smath_launcher usr/bin/
+  - chmod +x usr/bin/smath_launcher
+  - cp ../smath.desktop .
+

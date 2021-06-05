@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=SMathStudio
+GenericName=Math Software
+Exec=smath_launcher %F
+Icon=SSLogo256.png
+Categories=Office
