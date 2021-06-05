@@ -1,9 +1,15 @@
 Create an AppImage for SMath Studio https://smath.com
 
-This is made to run on Github Actions but it is also possible to run locally for debug purposes. To run locally run the following.
+This is made to run on Github Actions but it is also possible to run locally for debug purposes.
 
-`sudo apt install libmono-system-windows-forms4.0-cil`
+The Github action to build the AppImage is run on each push to this repository. The built AppImage can be found under the "Actions" tab.
 
-`./build_appimage.sh`
+To run locally do the following.
 
-Output is in the "out" directory.
+``` bash
+sudo apt install libmono-system-windows-forms4.0-cil libmono-microsoft-visualbasic10.0-cil libmono-system-windows-forms-datavisualization4.0a-cil
+
+./build_appimage.sh
+```
+
+Locally built AppImage will be in the "out" directory.
