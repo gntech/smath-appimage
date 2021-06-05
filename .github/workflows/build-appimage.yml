@@ -4,7 +4,16 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: wget https://github.com/AppImage/pkg2appimage/releases/download/continuous/pkg2appimage-1807-x86_64.AppImage
-      - run: chmod +x pkg2appimage-1807-x86_64.AppImage
-      - run: ./pkg2appimage-1807-x86_64.AppImage smath.yml
+      - name: build-appimage
+        uses: actions/checkout@v2
+        run: |
+          wget https://github.com/AppImage/pkg2appimage/releases/download/continuous/pkg2appimage-1807-x86_64.AppImage
+          chmod +x pkg2appimage-1807-x86_64.AppImage
+          ./pkg2appimage-1807-x86_64.AppImage smath.yml
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: |
+            out/*AppImage
+            
