@@ -9,7 +9,7 @@ jobs:
         run: sudo apt-get install libmono-system-windows-forms4.0-cil
       - name: build-appimage
         run: |
-          ./create_and_build_smath_appimage.sh
+          ./build_appimage.sh
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
