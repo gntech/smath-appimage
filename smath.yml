@@ -6,6 +6,7 @@ ingredients:
   packages:
     - mono-runtime
     - mono-reference-assemblies-2.0
+    - mono-reference-assemblies-4.0
     - libmono-corlib4.0-cil
     - libmono-system-windows-forms4.0-cil
   script:
