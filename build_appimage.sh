@@ -82,6 +82,7 @@ cp /usr/lib/mono/4.5/System.Numerics.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Security.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Windows.Forms.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Xml.dll AppDir/usr/lib/mono/4.5
+cp /usr/lib/mono/4.5/Microsoft.VisualBasic.dll AppDir/usr/lib/mono/4.5
 
 cp /usr/bin/mono AppDir/usr/bin
 #cp /usr/bin/gtk-dialog.py AppDir/usr/bin
