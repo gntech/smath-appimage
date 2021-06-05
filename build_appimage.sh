@@ -62,8 +62,6 @@ cp restore-environment.sh AppDir/usr/bin/
 chmod +x AppDir/usr/bin/restore-environment.sh
 
 cp /usr/lib/libgdiplus.so AppDir/usr/lib
-cp /usr/lib/libgdiplus.so.0 AppDir/usr/lib
-cp /usr/lib/libgdiplus.so.0.0.0 AppDir/usr/lib
 cp /usr/lib/libmono-btls-shared.so AppDir/usr/lib
 cp /usr/lib/libmono-native.so AppDir/usr/lib
 cp /usr/lib/libMonoPosixHelper.so AppDir/usr/lib
