@@ -12,10 +12,12 @@ ingredients:
     - wget --referer https://smath.com https://smath.com/file/oVRx7/SMathStudioDesktop.0_99_7822.Mono.tar.gz
     - VERSION=$(ls SMathStudioDesktop.* | head -1 | awk -F"." '{print $2}')
     - echo $VERSION > VERSION
+    - wget --referer https://smath.com https://smath.com/file/YsSTE/SMathStudio.Icons.zip
 script:
+  - unzip SMathStudio.Icons.zip
   - mkdir -p lib/smath
   - ( cd lib/smath ; tar -zxvf ../../../SMathStudio*.tar.gz)
-  - cp ../../smath.png .
+  - cp ../../SSLogo256.png smath.png
   - cat > usr/bin/smath <<EOF
   - #!/bin/sh
   - LAUNCHER=$(readlink -f "${0}")
