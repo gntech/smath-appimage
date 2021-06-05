@@ -5,7 +5,7 @@ ingredients:
     - deb http://archive.ubuntu.com/ubuntu/ focal main universe
   packages:
     - mono-runtime
-    - mono-gac
+    - mono-4.0-gac
     - libmono-system-windows-forms4.0-cil
   script:
     - wget --referer https://smath.com https://smath.com/file/oVRx7/SMathStudioDesktop.0_99_7822.Mono.tar.gz
