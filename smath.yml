@@ -17,7 +17,7 @@ script:
   - mkdir -p lib/smath
   - ( cd lib/smath ; tar -zxvf ../../../SMathStudio*.tar.gz)
   - cp SSLogo256.png smath.png
-  - cp ../smath_launcher usr/bin/
+  - cp ../../smath_launcher usr/bin/
   - chmod +x usr/bin/smath_launcher
-  - cp ../smath.desktop .
+  - cp ../../smath.desktop .
 
