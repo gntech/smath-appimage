@@ -76,6 +76,7 @@ cp /usr/lib/mono/4.5/System.Configuration.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Core.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Drawing.dll AppDir/usr/lib/mono/4.5
+cp /usr/lib/mono/4.5/System.Design.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Numerics.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Security.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/System.Windows.Forms.dll AppDir/usr/lib/mono/4.5
