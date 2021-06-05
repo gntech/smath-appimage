@@ -17,7 +17,7 @@ script:
   - unzip ../SMathStudio.Icons.zip
   - mkdir -p lib/smath
   - ( cd lib/smath ; tar -zxvf ../../../SMathStudio*.tar.gz)
-  - cp ../../SSLogo256.png smath.png
+  - cp SSLogo256.png smath.png
   - cat > usr/bin/smath <<EOF
   - #!/bin/sh
   - LAUNCHER=$(readlink -f "${0}")
