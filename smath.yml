@@ -4,8 +4,33 @@ ingredients:
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ focal main universe
   packages:
-    - mono-4.0-gac
+    - ca-certificates-mono
+    - cli-common
+    - libmono-btls-interface4.0-cil
+    - libmono-corlib4.5-cil
+    - libmono-i18n-west4.0-cil
+    - libmono-i18n4.0-cil
+    - libmono-security4.0-cil
+    - libmono-system-configuration4.0-cil
+    - libmono-system-core4.0-cil
+    - libmono-system-numerics4.0-cil
+    - libmono-system-security4.0-cil
+    - libmono-system-xml4.0-cil
+    - libmono-system4.0-cil
+    - mono-gac
+    - mono-runtime
+    - mono-runtime-common
+    - mono-runtime-sgen
+    - libgdiplus
+    - libmono-accessibility4.0-cil
+    - libmono-posix4.0-cil
+    - libmono-system-data4.0-cil
+    - libmono-system-drawing4.0-cil
+    - libmono-system-enterpriseservices4.0-cil
+    - libmono-system-runtime-serialization-formatters-soap4.0-cil
+    - libmono-system-transactions4.0-cil
     - libmono-system-windows-forms4.0-cil
+    - libmono-webbrowser4.0-cil
   script:
     - wget --referer https://smath.com https://smath.com/file/oVRx7/SMathStudioDesktop.0_99_7822.Mono.tar.gz
     - VERSION=$(ls SMathStudioDesktop.* | head -1 | awk -F"." '{print $2}')
