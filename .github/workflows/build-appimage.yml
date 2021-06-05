@@ -6,4 +6,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: wget https://github.com/AppImage/pkg2appimage/releases/download/continuous/pkg2appimage-1807-x86_64.AppImage
-      
+      - run: chmod +x pkg2appimage-1807-x86_64.AppImage
+      - run: ./pkg2appimage-1807-x86_64.AppImage smath.yml
