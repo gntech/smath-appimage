@@ -1,24 +1,15 @@
 #!/bin/sh
 
-rm -f *.tar.gz
-rm -f *.zip
-
 if [ -d "AppDir" ] 
 then
     rm -r AppDir
-else
-    echo "AppDir does not exists."
 fi
 if [ -d "Icons" ] 
 then
     rm -r Icons
-else
-    echo "Icons does not exists."
 fi
-if [ -d "out" ] 
+if [ ! -d "out" ] 
 then
-    echo "out exists."
-else
     mkdir out
 fi
 
@@ -63,9 +54,9 @@ cp Icons/SSLogo256.png AppDir/smath.png
 ## Copy files from git-repo/Resources to AppDir
 
 cp Resources/AppRun AppDir/
-cp Resources/smath.desktop AppDir/
-cp Resources/smath.desktop AppDir/usr/share/applications/
-cp Resources/smath.appdata.xml AppDir/usr/share/metainfo/
+cp Resources/com.smath.smathstudio.desktop AppDir/
+cp Resources/com.smath.smathstudio.desktop AppDir/usr/share/applications/
+cp Resources/com.smath.smathstudio.appdata.xml AppDir/usr/share/metainfo/
 cp Resources/smath_launcher AppDir/usr/bin/
 cp Resources/restore-environment.sh AppDir/usr/bin/
 

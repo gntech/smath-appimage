@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>smath.desktop</id>
-  <metadata_license>Properitary</metadata_license>
-  <project_license>Properitary</project_license>
+  <id>com.smath.smathstudio</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>LicenseRef-proprietary=https://en.smath.com/view/SMathStudio/license</project_license>
   <name>smath</name>
   <summary>Engineering Math Calculation</summary>
   <description>
@@ -22,6 +22,7 @@
       snippets, interface translations, interactive books, handbooks and tutorials.
     </p>
   </description>
+  <launchable type="desktop-id">com.smath.smathstudio.desktop</launchable>
   <url type="homepage">https://smath.com</url>
   <project_group>SMath</project_group>
   <provides>
