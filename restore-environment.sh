@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Restoring environment..."
+
 # Restore the environment variables that were set by AppRun
 export PATH="${SMATH_ORIG_PATH}"
 export XDG_DATA_DIRS="${SMATH_ORIG_XDG_DATA_DIRS}"
