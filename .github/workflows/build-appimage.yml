@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install mono
-        run: sudo apt-get install libmono-system-windows-forms4.0-cil libmono-microsoft-visualbasic10.0-cil libmono-system-windows-forms-datavisualization4.0a-cil
+        run: sudo apt-get install libmono-system-windows-forms4.0-cil libmono-microsoft-visualbasic10.0-cil libmono-system-windows-forms-datavisualization4.0a-cil libmono-system-design4.0-cil libmono-microsoft-csharp4.0-cil
       - name: build-appimage
         run: |
           ./build_appimage.sh

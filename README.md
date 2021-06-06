@@ -12,7 +12,7 @@ To run the script locally for *debugging or development* do the following.
 
 ``` bash
 # Install needed mono libraries
-sudo apt install libmono-system-windows-forms4.0-cil libmono-microsoft-visualbasic10.0-cil libmono-system-windows-forms-datavisualization4.0a-cil
+sudo apt install libmono-system-windows-forms4.0-cil libmono-microsoft-visualbasic10.0-cil libmono-system-windows-forms-datavisualization4.0a-cil libmono-system-design4.0-cil libmono-microsoft-csharp4.0-cil
 
 ./build_appimage.sh
 ```

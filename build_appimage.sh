@@ -57,6 +57,7 @@ cp Resources/AppRun AppDir/
 cp Resources/com.smath.smathstudio.desktop AppDir/
 cp Resources/com.smath.smathstudio.desktop AppDir/usr/share/applications/
 cp Resources/com.smath.smathstudio.appdata.xml AppDir/usr/share/metainfo/
+cp Resources/application-smathstudio.xml AppDir/usr/share/mime/packages/
 cp Resources/smath_launcher AppDir/usr/bin/
 cp Resources/restore-environment.sh AppDir/usr/bin/
 
