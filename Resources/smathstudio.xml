@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
-  <mime-type type="application/smathstudio">
+  <mime-type type="application/x-smathstudio-worksheet">
+    <sub-class-of type="text/plain"/>
     <comment>SMath Studio Worksheet files</comment>
     <glob pattern="*.sm"/>
   </mime-type>
