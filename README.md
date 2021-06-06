@@ -18,3 +18,7 @@ sudo apt install libmono-system-windows-forms4.0-cil libmono-microsoft-visualbas
 ```
 
 Locally built AppImage will be in the "out" directory.
+
+## Aknowledgements
+
+The structure of this appimage is based on studying the appimage-work by overlord on the SMath forum as well as the OpenRA appimage
