@@ -79,6 +79,9 @@ cp /usr/lib/libmono-native.so.0 AppDir/usr/lib
 cp /usr/lib/libmono-native.so.0.0.0 AppDir/usr/lib
 cp /usr/lib/libMonoPosixHelper.so AppDir/usr/lib
 
+## workaround for Fedora 34
+cp /usr/lib/x86_64-linux-gnu/libjpeg.so.8 AppDir/usr/lib
+
 cp /usr/lib/mono/4.5/cert-sync.exe AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/mscorlib.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Accessibility.dll AppDir/usr/lib/mono/4.5
