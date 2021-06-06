@@ -24,8 +24,14 @@
   </description>
   <launchable type="desktop-id">com.smath.smathstudio.desktop</launchable>
   <url type="homepage">https://smath.com</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window</caption>
+      <image>https://github.com/gntech/smath-appimage/blob/master/Resources/screenshot.png</image>
+    </screenshot>
+  </screenshots>
   <project_group>SMath</project_group>
   <provides>
-    <binary>smath</binary>
+    <binary>smath_launcher</binary>
   </provides>
 </component>
