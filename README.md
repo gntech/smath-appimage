@@ -1,6 +1,6 @@
 ## Automatic generation of AppImages for SMath Studio https://smath.com
 
-For download of SMath Studio AppImage https://github.com/gntech/smath-appimage/releases
+SMath Studio AppImages are available from the Releases page https://github.com/gntech/smath-appimage/releases
 
 ## How it works
 

@@ -2,6 +2,7 @@
 LAUNCHER=$(readlink -f "${0}")
 HERE="$(dirname "${LAUNCHER}")"
 cd "${HERE}/../lib/smath" || exit 1
+VERSION="$(cat "${HERE}/VERSION")"
 
 # APPIMAGE is an environment variable set by the runtime
 # defining the absolute path to the .AppImage file
@@ -13,10 +14,10 @@ if [ -n "${APPIMAGE}" ]; then
 	# that the desktop file has been installed but the handler is not cached
 	if command -v update-desktop-database > /dev/null; then
 		APPIMAGEID=$(printf "file://%s" "${APPIMAGE}" | md5sum | cut -d' ' -f1)
-		LAUNCHER_NAME="appimagekit_${APPIMAGEID}-openra-ra.desktop"
+		LAUNCHER_NAME="appimagekit_${APPIMAGEID}-smath.desktop"
 		LAUNCHER_PATH="${HOME}/.local/share/applications/${LAUNCHER_NAME}"
 		MIMECACHE_PATH="${HOME}/.local/share/applications/mimeinfo.cache"
-		SCHEME="x-scheme-handler/openra-ra-release-20210321"
+		SCHEME="x-scheme-handler/smath-release-${VERSION}"
 		if [ -f "${LAUNCHER_PATH}" ] && ! grep -qs "${SCHEME}=" "${MIMECACHE_PATH}"; then
 			update-desktop-database "${HOME}/.local/share/applications"
 			if command -v gtk-update-icon-cache > /dev/null; then
@@ -26,25 +27,25 @@ if [ -n "${APPIMAGE}" ]; then
 	fi
 fi
 
-# Run the game
-#export SDL_VIDEO_X11_WMCLASS="openra-ra-release-20210321"
-mono --debug SMathStudio_Desktop.exe Engine.LaunchPath="${LAUNCHER}" Engine.LaunchWrapper="${HERE}/restore-environment.sh" "$@"
+# Run SMath
+mono --debug SMathStudio_Desktop.exe "$@"
+./${HERE}/restore-environment.sh
 
 # Show a crash dialog if something went wrong
 if [ $? != 0 ] && [ $? != 1 ]; then
-	LOGS="${XDG_CONFIG_HOME:-${HOME}/.config}/openra/Logs"
-	if [ ! -d "${LOGS}" ] && [ -d "${HOME}/.openra/Logs" ]; then
-		LOGS="${HOME}/.openra/Logs"
+	LOGS="${XDG_CONFIG_HOME:-${HOME}/.config}/SMath/Logs"
+	if [ ! -d "${LOGS}" ] && [ -d "${HOME}/.SMath/Logs" ]; then
+		LOGS="${HOME}/.SMath/Logs"
 	fi
 
 	test -d Support/Logs && LOGS="${PWD}/Support/Logs"
-	ERROR_MESSAGE="Red Alert has encountered a fatal error.\nPlease refer to the crash logs and FAQ for more information.\n\nLog files are located in ${LOGS}\nThe FAQ is available at http://wiki.openra.net/FAQ"
+	ERROR_MESSAGE="SMath has encountered a fatal error.\nPlease refer to the crash logs and FAQ for more information.\n\nLog files are located in ${LOGS}\n"
 	if command -v zenity > /dev/null; then
-		zenity --no-wrap --error --title "Red Alert" --text "${ERROR_MESSAGE}" 2> /dev/null
+		zenity --no-wrap --error --title "SMath" --text "${ERROR_MESSAGE}" 2> /dev/null
 	elif command -v kdialog > /dev/null; then
-		kdialog --title "Red Alert" --error "${ERROR_MESSAGE}"
+		kdialog --title "SMath" --error "${ERROR_MESSAGE}"
 	elif "${HERE}/gtk-dialog.py" test > /dev/null; then
-		"${HERE}/gtk-dialog.py" error --title "Red Alert" --text "${ERROR_MESSAGE}" 2> /dev/null
+		"${HERE}/gtk-dialog.py" error --title "SMath" --text "${ERROR_MESSAGE}" 2> /dev/null
 	else
 		printf "${ERROR_MESSAGE}\n"
 	fi
