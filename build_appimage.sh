@@ -70,9 +70,13 @@ cp /usr/bin/mono AppDir/usr/bin
 cp /etc/mono/config AppDir/etc/mono/
 cp /etc/mono/4.5/machine.config AppDir/etc/mono/4.5
 
+cp /usr/lib/libgdiplus.so AppDir/usr/lib
 cp /usr/lib/libgdiplus.so.0 AppDir/usr/lib
+cp /usr/lib/libgdiplus.so.0.0.0 AppDir/usr/lib
 cp /usr/lib/libmono-btls-shared.so AppDir/usr/lib
 cp /usr/lib/libmono-native.so AppDir/usr/lib
+cp /usr/lib/libmono-native.so.0 AppDir/usr/lib
+cp /usr/lib/libmono-native.so.0.0.0 AppDir/usr/lib
 cp /usr/lib/libMonoPosixHelper.so AppDir/usr/lib
 
 cp /usr/lib/mono/4.5/cert-sync.exe AppDir/usr/lib/mono/4.5
