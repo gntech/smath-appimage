@@ -24,8 +24,10 @@ fi
 
 ## Create all needed folders in the AppDir
 
-mkdir -p AppDir/etc/mono/4.5
 mkdir -p AppDir/usr/bin
+mkdir -p AppDir/usr/lib/smath
+mkdir -p AppDir/usr/lib/mono/4.5
+mkdir -p AppDir/etc/mono/4.5
 mkdir -p AppDir/usr/share/applications
 mkdir -p AppDir/usr/share/mime/packages
 mkdir -p AppDir/usr/share/icons/hicolor/16x16
@@ -37,8 +39,6 @@ mkdir -p AppDir/usr/share/icons/hicolor/256x256
 mkdir -p AppDir/usr/share/icons/hicolor/512x512
 mkdir -p AppDir/usr/share/icons/hicolor/1024x1024
 mkdir -p AppDir/usr/share/icons/hicolor/scalable
-mkdir -p AppDir/usr/lib/mono/4.5
-mkdir -p AppDir/usr/lib/smath
 
 ## Download SMath Release from SMath website and place the files in AppDir
 
