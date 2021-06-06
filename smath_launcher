@@ -2,7 +2,7 @@
 LAUNCHER=$(readlink -f "${0}")
 HERE="$(dirname "${LAUNCHER}")"
 cd "${HERE}/../lib/smath" || exit 1
-VERSION="$(cat "${HERE}/VERSION")"
+VERSION="$(cat "${HERE}/../../VERSION")"
 
 # APPIMAGE is an environment variable set by the runtime
 # defining the absolute path to the .AppImage file
@@ -29,7 +29,7 @@ fi
 
 # Run SMath
 mono --debug SMathStudio_Desktop.exe "$@"
-./${HERE}/restore-environment.sh
+${HERE}/restore-environment.sh
 
 # Show a crash dialog if something went wrong
 if [ $? != 0 ] && [ $? != 1 ]; then
