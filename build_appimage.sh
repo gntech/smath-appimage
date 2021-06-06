@@ -59,13 +59,13 @@ cp Icons/SSLogo128.png AppDir/usr/share/icons/hicolor/128x128/smath.png
 cp Icons/SSLogo256.png AppDir/usr/share/icons/hicolor/256x256/smath.png
 cp Icons/SSLogo256.png AppDir/smath.png
 
-## Copy files from git-repo to AppDir
+## Copy files from git-repo/Resources to AppDir
 
-cp AppRun AppDir/
-cp smath.desktop AppDir/
-cp smath.desktop AppDir/usr/share/applications/
-cp smath_launcher AppDir/usr/bin/
-cp restore-environment.sh AppDir/usr/bin/
+cp Resources/AppRun AppDir/
+cp Resources/smath.desktop AppDir/
+cp Resources/smath.desktop AppDir/usr/share/applications/
+cp Resources/smath_launcher AppDir/usr/bin/
+cp Resources/restore-environment.sh AppDir/usr/bin/
 
 chmod +x AppDir/usr/bin/smath_launcher
 chmod +x AppDir/usr/bin/restore-environment.sh
