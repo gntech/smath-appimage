@@ -29,6 +29,7 @@ mkdir -p AppDir/usr/lib/smath
 mkdir -p AppDir/usr/lib/mono/4.5
 mkdir -p AppDir/etc/mono/4.5
 mkdir -p AppDir/usr/share/applications
+mkdir -p AppDir/usr/share/metainfo
 mkdir -p AppDir/usr/share/mime/packages
 mkdir -p AppDir/usr/share/icons/hicolor/16x16
 mkdir -p AppDir/usr/share/icons/hicolor/32x32
@@ -64,6 +65,7 @@ cp Icons/SSLogo256.png AppDir/smath.png
 cp Resources/AppRun AppDir/
 cp Resources/smath.desktop AppDir/
 cp Resources/smath.desktop AppDir/usr/share/applications/
+cp Resources/smath.appdata.xml AppDir/usr/share/metainfo/
 cp Resources/smath_launcher AppDir/usr/bin/
 cp Resources/restore-environment.sh AppDir/usr/bin/
 
