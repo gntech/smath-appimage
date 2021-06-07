@@ -28,8 +28,7 @@ if [ -n "${APPIMAGE}" ]; then
 fi
 
 # Run SMath
-mono --debug SMathStudio_Desktop.exe "$@"
-${HERE}/restore-environment.sh
+MONO_PATH="${HERE}/../lib/mono/4.5" MONO_CFG_DIR="${HERE}/../../etc" MONO_CONFIG="${HERE}/../../etc/mono/config" ${HERE}/mono --debug SMathStudio_Desktop.exe "$@"
 
 # Show a crash dialog if something went wrong
 if [ $? != 0 ] && [ $? != 1 ]; then

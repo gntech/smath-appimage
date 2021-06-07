@@ -13,24 +13,23 @@ then
     mkdir out
 fi
 
-## Create all needed folders in the AppDir
+## Download linuxdeploy
 
-mkdir -p AppDir/usr/bin
+wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+chmod +x linuxdeploy-x86_64.AppImage
+
+./linuxdeploy-x86_64.AppImage --appdir AppDir -d Resources/com.smath.smathstudio.desktop
+./linuxdeploy-x86_64.AppImage --appdir AppDir -e /usr/bin/mono
+./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libgdiplus.so
+./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libmono-btls-shared.so
+./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libmono-native.so
+./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libMonoPosixHelper.so
+
+## Create all needed extra folders in the AppDir (not created by linuxdeploy)
+
 mkdir -p AppDir/usr/lib/smath
 mkdir -p AppDir/usr/lib/mono/4.5
 mkdir -p AppDir/etc/mono/4.5
-mkdir -p AppDir/usr/share/applications
-mkdir -p AppDir/usr/share/metainfo
-mkdir -p AppDir/usr/share/mime/packages
-mkdir -p AppDir/usr/share/icons/hicolor/16x16
-mkdir -p AppDir/usr/share/icons/hicolor/32x32
-mkdir -p AppDir/usr/share/icons/hicolor/48x48
-mkdir -p AppDir/usr/share/icons/hicolor/64x64
-mkdir -p AppDir/usr/share/icons/hicolor/128x128
-mkdir -p AppDir/usr/share/icons/hicolor/256x256
-mkdir -p AppDir/usr/share/icons/hicolor/512x512
-mkdir -p AppDir/usr/share/icons/hicolor/1024x1024
-mkdir -p AppDir/usr/share/icons/hicolor/scalable
 
 ## Download SMath Release from SMath website and place the files in AppDir
 
@@ -53,9 +52,6 @@ cp Icons/SSLogo256.png AppDir/smath.png
 
 ## Copy files from git-repo/Resources to AppDir
 
-cp Resources/AppRun AppDir/
-cp Resources/com.smath.smathstudio.desktop AppDir/
-cp Resources/com.smath.smathstudio.desktop AppDir/usr/share/applications/
 cp Resources/com.smath.smathstudio.appdata.xml AppDir/usr/share/metainfo/
 cp Resources/smathstudio.xml AppDir/usr/share/mime/packages/
 cp Resources/smath_launcher AppDir/usr/bin/
@@ -66,22 +62,8 @@ chmod +x AppDir/usr/bin/restore-environment.sh
 
 ## Copy libraries from host system (Github Actions Runner or local system) to AppDir
 
-cp /usr/bin/mono AppDir/usr/bin
 cp /etc/mono/config AppDir/etc/mono/
 cp /etc/mono/4.5/machine.config AppDir/etc/mono/4.5
-
-cp /usr/lib/libgdiplus.so AppDir/usr/lib
-cp /usr/lib/libgdiplus.so.0 AppDir/usr/lib
-cp /usr/lib/libgdiplus.so.0.0.0 AppDir/usr/lib
-cp /usr/lib/libmono-btls-shared.so AppDir/usr/lib
-cp /usr/lib/libmono-native.so AppDir/usr/lib
-cp /usr/lib/libmono-native.so.0 AppDir/usr/lib
-cp /usr/lib/libmono-native.so.0.0.0 AppDir/usr/lib
-cp /usr/lib/libMonoPosixHelper.so AppDir/usr/lib
-
-## workaround for Fedora 34
-cp /usr/lib/x86_64-linux-gnu/libjpeg.so.8 AppDir/usr/lib
-
 cp /usr/lib/mono/4.5/cert-sync.exe AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/mscorlib.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Accessibility.dll AppDir/usr/lib/mono/4.5
@@ -101,13 +83,11 @@ cp /usr/lib/mono/4.5/System.Xml.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Microsoft.CSharp.dll AppDir/usr/lib/mono/4.5
 cp /usr/lib/mono/4.5/Microsoft.VisualBasic.dll AppDir/usr/lib/mono/4.5
 
-## Download appimagetool and Build AppImage from AppDir
-
-wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-chmod +x appimagetool-x86_64.AppImage
 ARCH=x86_64
 GLIBC=$(ldd --version | head -1 | awk '{print $5}')
-ARCH=${ARCH} ./appimagetool-x86_64.AppImage AppDir out/SMathStudioDesktop.${VERSION}.${ARCH}.glibc${GLIBC}.AppImage
+ARCH=${ARCH} ./linuxdeploy-x86_64.AppImage --appdir AppDir --output appimage 
+
+mv SMath*.AppImage out/SMathStudioDesktop.${VERSION}.${ARCH}.glibc${GLIBC}.AppImage
 
 rm -f *.zip
 rm -f *.tar.gz
