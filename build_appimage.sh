@@ -20,7 +20,7 @@ chmod +x linuxdeploy-x86_64.AppImage
 
 ./linuxdeploy-x86_64.AppImage --appdir AppDir -d Resources/com.smath.smathstudio.desktop
 ./linuxdeploy-x86_64.AppImage --appdir AppDir -e /usr/bin/mono
-./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libgdiplus.so
+./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libgdiplus.so.0
 ./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libmono-btls-shared.so
 ./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libmono-native.so
 ./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libMonoPosixHelper.so
