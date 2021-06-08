@@ -18,12 +18,11 @@ fi
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
 chmod +x linuxdeploy-x86_64.AppImage
 
-./linuxdeploy-x86_64.AppImage --appdir AppDir -d Resources/com.smath.smathstudio.desktop
-./linuxdeploy-x86_64.AppImage --appdir AppDir -e /usr/bin/mono
-./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libgdiplus.so.0
-./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libmono-btls-shared.so
-./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libmono-native.so
-./linuxdeploy-x86_64.AppImage --appdir AppDir -l /usr/lib/libMonoPosixHelper.so
+./linuxdeploy-x86_64.AppImage --appdir AppDir -d Resources/com.smath.smathstudio.desktop -e /usr/bin/mono \
+   -l /usr/lib/libgdiplus.so.0 \
+   -l /usr/lib/libmono-btls-shared.so \
+   -l /usr/lib/libmono-native.so \
+   -l /usr/lib/libMonoPosixHelper.so
 
 ## Create all needed extra folders in the AppDir (not created by linuxdeploy)
 
