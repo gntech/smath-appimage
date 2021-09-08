@@ -1,14 +1,14 @@
 #!/bin/sh
 
-if [ -d "AppDir" ] 
+if [ -d "AppDir" ]
 then
     rm -r AppDir
 fi
-if [ -d "Icons" ] 
+if [ -d "Icons" ]
 then
     rm -r Icons
 fi
-if [ ! -d "out" ] 
+if [ ! -d "out" ]
 then
     mkdir out
 fi
@@ -84,7 +84,7 @@ cp /usr/lib/mono/4.5/Microsoft.VisualBasic.dll AppDir/usr/lib/mono/4.5
 
 ARCH=x86_64
 GLIBC=$(ldd --version | head -1 | awk '{print $5}')
-ARCH=${ARCH} ./linuxdeploy-x86_64.AppImage --appdir AppDir --output appimage 
+ARCH=${ARCH} ./linuxdeploy-x86_64.AppImage --appdir AppDir --output appimage
 
 mv SMath*.AppImage out/SMathStudioDesktop.${VERSION}.${ARCH}.glibc${GLIBC}.AppImage
 
